@@ -32,6 +32,8 @@ RUN apt-get update \
 # install python dependencies
 RUN pip install -r ${REPO_PATH}/dependencies-py.txt
 
+RUN pip install torch==1.3.0+cpu torchvision==0.4.1+cpu -f https://download.pytorch.org/whl/torch_stable.html
+
 # copy the source code
 COPY . "${REPO_PATH}/"
 
